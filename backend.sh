@@ -25,7 +25,7 @@ then
     exit 1 # manually exit if error comes.
     else
         echo "you are super user."
-    fi 
+fi 
     
     dnf module disable nodejs -y &>>$LOGFILE
     VALIDATE $? "Disabling default nodejs"
