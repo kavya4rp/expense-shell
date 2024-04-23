@@ -3,9 +3,9 @@ Description = Backend Service
 
 [Service]
 User=expense
-Environment=DB_HOST="<kavya.cloud>"
+Environment=DB_HOST="kavya.could"
 ExecStart=/bin/node /app/index.js
-SysLogIdentifier=Backend
+SyslogIdentifier=backend
 
 [Install]
-WanteBy=multi-user.target
+WantedBy=multi-user.target
