@@ -14,7 +14,8 @@ read -s mysql_root_password
 VALIDATE()
 {
     if [ $1 -ne 0 ]
-    then 
+    then !/bin/bash
+
         echo -e "$2...$R FAILURE $N"
         exit 1
     else 
@@ -62,6 +63,7 @@ VALIDATE $? "Extracted backend code"
 npm install &>>$LOGFILE
 VALIDATE $? "Installing nodejs dependencies"
 
+#check your repo and path
 cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service &>>$LOGFILE
 VALIDATE $? "Copied backend service"
 
