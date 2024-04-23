@@ -11,8 +11,7 @@ N="\e[0m"
 echo "Please enter DB password:"
 read -s mysql_root_password
 
-VALIDATE()
-{
+VALIDATE(){
     if [ $1 -ne 0 ]
     then 
         echo -e "$2...$R FAILURE $N"
@@ -55,6 +54,7 @@ curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expen
 VALIDATE $? "Downloading backend code"
 
 cd /app
+rm -rf /app/*
 unzip -o /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "Extracted backend code"
 
