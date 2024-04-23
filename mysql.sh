@@ -50,4 +50,3 @@ then
     VALIDATE $? "MYSQL Root password setup"
 else
     echo -e "MYSQL Root password is already setup...$Y SKIPPING $N"
-fi
